@@ -9,6 +9,9 @@ export default function EditUser() {
   const [time, setTime] = useState(new Date().toDateString());
 
   const handleSubmit = () => {
+    if (!name || !phone || !email) {
+      alert("Please enter the details");
+    } else
     editUser(name, phone, email, time);
   };
   function getUser() {
