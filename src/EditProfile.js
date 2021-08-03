@@ -11,16 +11,20 @@ export default function EditProfile() {
   const [txt, setTxt] = useState(profileData.txt);
   const [profPic, setProfPic] = useState(profileData.profPic);
   function handleSubmit() {
-    setProfileData({
-      ...profileData,
-      id,
-      name,
-      mobile,
-      txt,
-      profPic
-    });
-    history.push(`/profile/1`);
-    alert("Profile is updated !!");
+    if (!name || !mobile || !txt || !profPic) {
+      alert("Please enter the details");
+    } else {
+      setProfileData({
+        ...profileData,
+        id,
+        name,
+        mobile,
+        txt,
+        profPic
+      });
+      history.push(`/profile/1`);
+      alert("Profile is updated !!");
+    }
   }
   return (
     <div className="container">
