@@ -9,6 +9,9 @@ export default function CreateUser() {
   const history = useHistory();
 
   const handleSubmit = () => {
+    if (!name || !phone || !email) {
+      alert("Please enter the details");
+    } else
     addUser(name, phone, email);
   };
   function addUser(name, phone, email) {
